@@ -19,7 +19,7 @@ mkdir -p "$sample_name"
 rm -f "$sample_name/"*.ogg
 
 # Split into 2s chunks as .ogg
-ffmpeg -i "$mp3_path" -f segment -segment_time 2 -c:a libvorbis "$sample_name/%d.ogg"
+ffmpeg -i "$mp3_path" -f segment -segment_time 0.5 -c:a libvorbis "$sample_name/%d.ogg"
 
 # Build array of sample paths
 ogg_files=($(ls "$sample_name"/*.ogg | sort -V))
